@@ -617,6 +617,109 @@ img {
   line-height: 36px;
 }
 
+.contacts__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 700px;
+  background-image: url("../img/contacts-bg.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 450px;
+}
+
+.contacts__title {
+  margin: 0;
+  margin-bottom: 40px;
+  font-family: "Merriweather", "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 80px;
+  color: var(--accent-color);
+}
+
+.form__fields input {
+  margin-bottom: 20px;
+}
+
+.form__fields textarea {
+  margin-bottom: 18px;
+}
+
+.form__field {
+  margin: 0;
+  padding: 10px 17px;
+  width: 100%;
+  max-width: 450px;
+  height: 50px;
+  border: 2px solid var(--accent-color);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--accent-color);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--accent-color);
+  -webkit-transition: background-color 0s ease-in-out 9000s;
+  transition: background-color 0s ease-in-out 9000s;
+}
+
+.form__field::-webkit-input-placeholder {
+  font-family: inherit;
+  color: var(--accent-color);
+  font-size: 20px;
+}
+
+.form__field::-moz-placeholder {
+  font-family: inherit;
+  color: var(--accent-color);
+  font-size: 20px;
+}
+
+.form__field:-ms-input-placeholder {
+  font-family: inherit;
+  color: var(--accent-color);
+  font-size: 20px;
+}
+
+.form__field::-ms-input-placeholder {
+  font-family: inherit;
+  color: var(--accent-color);
+  font-size: 20px;
+}
+
+.form__field::placeholder {
+  font-family: inherit;
+  color: var(--accent-color);
+  font-size: 20px;
+}
+
+.message-field {
+  height: 100px;
+  resize: none;
+}
+
 @media (max-width: 1440px) {
   .hero {
     background-size: cover;
@@ -848,6 +951,25 @@ img {
 
   .price__item {
     width: 420px;
+  }
+
+  .contacts__wrapper {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 600px;
+  }
+
+  .form {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .contacts__title {
+    text-align: center;
+    font-size: var(--size-heading);
+    line-height: 64px;
   }
 }
 

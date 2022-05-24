@@ -1,3 +1,45 @@
+import i18Obj from "./translate.js";
+
+//Set language
+let lang = {
+  default: "en",
+  current: null,
+};
+
+lang.current = localStorage.getItem("lang") || lang.default;
+
+// Translation
+const getTranslate = (lang) => {
+  const targets = document.querySelectorAll("[data-i18n]");
+  targets.forEach((e) => {
+    if (e.placeholder) {
+      e.placeholder = i18Obj[lang][e.dataset.i18n];
+      return;
+    }
+    e.textContent = i18Obj[lang][e.dataset.i18n];
+  });
+};
+
+const setLocalStorage = () => localStorage.setItem("lang", lang.current);
+
+const getLocalStorage = () => {
+  if (lang.default != lang.current) {
+    getTranslate(lang.current);
+    document.querySelector(`.lang-switcher__radio[value="${lang.current}"]`).checked = true;
+  }
+};
+
+const setLanguage = () => {
+  lang.current = document.querySelector(".lang-switcher__radio:checked").value;
+  getTranslate(lang.current);
+  setLocalStorage();
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  getLocalStorage();
+  document.querySelector(".lang-switcher").addEventListener("change", setLanguage);
+});
+
 // Burger script
 const menuToggle = document.querySelector(".burger");
 const nav = document.querySelector(".menu");
